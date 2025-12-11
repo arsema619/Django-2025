@@ -2,7 +2,6 @@
 with open("log.txt", "a") as file:
     file.write("User logged in\n")
 
-# Read and print full log history
 with open("log.txt", "r") as file:
     log_history = file.read()
 

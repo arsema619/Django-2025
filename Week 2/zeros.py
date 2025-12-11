@@ -1,22 +1,17 @@
+
 def move_zeroes(nums):
-    # pointer `last_non_zero_found_at` for the position to place next non-zero
-    last_non_zero_found_at = 0
+    insert_pos = 0
+    for num in nums:
+        if num != 0:
+            nums[insert_pos] = num
+            insert_pos += 1
+    while insert_pos < len(nums):
+        nums[insert_pos] = 0
+        insert_pos += 1
 
-    # First pass: move non-zeroes forward
-    for i in range(len(nums)):
-        if nums[i] != 0:
-            nums[last_non_zero_found_at] = nums[i]
-            last_non_zero_found_at += 1
+# Input from user
+nums = input("Enter numbers separated by space: ").split()
+nums = [int(x) for x in nums]  # Convert to integers
 
-    # Then fill remaining positions with zeros
-    for i in range(last_non_zero_found_at, len(nums)):
-        nums[i] = 0
-
-# Examples:
-arr1 = [0,1,0,3,12]
-move_zeroes(arr1)
-print(arr1)  # [1,3,12,0,0]
-
-arr2 = [0]
-move_zeroes(arr2)
-print(arr2)  # [0]
+move_zeroes(nums)
+print("After moving zeros:", nums)
