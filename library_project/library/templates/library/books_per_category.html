@@ -1,0 +1,9 @@
+<h1>Number of Books in Each Category</h1>
+
+<ul>
+  {% for cat in categories %}
+  <li>{{ cat.name }} - {{ cat.book_count }} books</li>
+  {% empty %}
+  <li>No categories found.</li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,9 @@
+<h1>Top 3 Members with Most Active Loans</h1>
+
+<ul>
+  {% for member in members %}
+  <li>{{ member.name }} - Loans: {{ member.loan_count }}</li>
+  {% empty %}
+  <li>No members found.</li>
+  {% endfor %}
+</ul>

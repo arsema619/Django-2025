@@ -1,0 +1,13 @@
+<h1>All Books</h1>
+
+<ul>
+  {% for book in books %}
+  <li>
+    <strong>{{ book.title }}</strong> - Author: {{ book.author.name }} -
+    Categories: {% for cat in book.categories.all %} {{ cat.name }} {% empty %}
+    No category {% endfor %}
+  </li>
+  {% empty %}
+  <li>No books found.</li>
+  {% endfor %}
+</ul>
