@@ -1,0 +1,10 @@
+<h1>Top 5 Authors by Revenue</h1>
+
+{% for author in top_authors %}
+<h3>{{ author.name }} - Total Revenue: ${{ author.total_revenue }}</h3>
+<ul>
+  {% for book in author.books.all %}
+  <li>{{ book.title }}</li>
+  {% endfor %}
+</ul>
+{% endfor %}

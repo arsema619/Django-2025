@@ -1,0 +1,6 @@
+<h2>Books and Authors</h2>
+<ul>
+  {% for book in books %}
+  <li>{{ book.title }} - {{ book.author.name }}</li>
+  {% endfor %}
+</ul>

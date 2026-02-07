@@ -1,0 +1,15 @@
+<!-- book/templates/book/query_results.html -->
+
+<h2>Books not free and with 13-digit ISBN</h2>
+<ul>
+  {% for book in books %}
+  <li>{{ book.title }} - ${{ book.price }} - ISBN: {{ book.isbn }}</li>
+  {% endfor %}
+</ul>
+
+<h2>Authors with books over $50</h2>
+<ul>
+  {% for author in authors %}
+  <li>{{ author.name }}</li>
+  {% endfor %}
+</ul>
