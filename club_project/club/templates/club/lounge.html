@@ -1,0 +1,8 @@
+<h1>Member Lounge</h1>
+
+<p>Welcome to the lounge, {{ user.username }}!</p>
+
+<form action="/logout/" method="post">
+  {% csrf_token %}
+  <button type="submit">Logout</button>
+</form>
